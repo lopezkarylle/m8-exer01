@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    
+    <form name="myForm" onsubmit="return(validate());" ng-app="">
+        <h2><center>Employee Registration</center></h2><br>
+        <div class="row">
+            <label>Employee ID</label>
+            <input type="text" name="empId" required placeholder="Please enter your Employee ID"/><br>
+            <div class="error" id="empIdErr"></div>
+        </div>
+
+        <div class="col">
+            <label>First Name</label>
+            <input type="text" name="firstName" placeholder="Please enter first name"/><br>
+            <div class="error" id="firstnameErr"></div>
+
+            <label>Last Name</label>
+            <input type="text" name="lastName" placeholder="Please enter last name"/><br>
+            <div class="error" id="lastnameErr"></div>
+        </div>
+
+        <div>
+            <label>Address</label>
+            <input type="text" name="address" ng-model="address" required placeholder="Please enter address"><br>
+        </div>
+
+        <div>
+            <label>Department</label>
+            <input type="text" name="department" ng-model="department" required placeholder="Please enter department"><br>
+        </div>
+
+        <div>
+            <label>Position</label>
+            <input type="text" name="position" ng-model="position" required placeholder="Please enter position"><br>
+        </div>
+
+        <div class="row">
+            <label>Email Address</label>
+            <input type="text" name="email" placeholder="Please enter email"/><br>
+            <div class="error" id="emailErr"></div>
+        </div>
+
+        <div class="row">
+            <label>Contact Number</label>
+            <input type="text" name="contactNumber" placeholder="Please enter contact number"/><br>
+            <div class="error" id="contactErr"></div>
+        </div>
+
+        <div>
+            <label>Salary</label>
+            <input type="number"  placeholder="Enter amount" ng-model="salary"  required>
+            <h6>Your salary is: {{salary | currency:"₱"}}</h6>
+        </div>
+
+        <div>
+            <label>Username</label>
+            <input type="text" name="username" ng-model="username" required placeholder="Please enter username"><br>
+        </div>
+    </div>
+
+        <input type="submit" value="Submit"/>
+        <script type="text/javascript" src="validation.js"></script>
+    </form>
+</body>
+</html>
